@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Crud Learning PostgreSQL",
+      "Group": "Servers",
+      "Host": "db",
+      "Port": 5432,
+      "MaintenanceDB": "crud_learning_db",
+      "Username": "postgres",
+      "SSLMode": "prefer"
+    }
+  }
+}

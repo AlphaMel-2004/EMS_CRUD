@@ -1,0 +1,27 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5299",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ResetDatabaseOnStartup": "true",
+        "ConnectionStrings__DefaultConnection": "Host=localhost;Port=5432;Database=crud_learning_db;Username=postgres;Password=Pakboys123"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:7208;http://localhost:5299",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ResetDatabaseOnStartup": "true",
+        "ConnectionStrings__DefaultConnection": "Host=localhost;Port=5432;Database=crud_learning_db;Username=postgres;Password=Pakboys123"
+      }
+    }
+  }
+}
