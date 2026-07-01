@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrudLearning.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc98095e45c9f25547c26cc0718bb82ee5b3ed89")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f9ca163a1721e3e1117f123049d9ce4600b86f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrudLearning.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrudLearning.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

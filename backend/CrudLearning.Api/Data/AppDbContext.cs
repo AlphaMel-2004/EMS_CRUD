@@ -13,6 +13,7 @@ namespace CrudLearning.Api.Data
         public DbSet<Employee> Employees => Set<Employee>();
         public DbSet<AppUser> Users => Set<AppUser>();
         public DbSet<AttendanceEntry> AttendanceEntries => Set<AttendanceEntry>();
+        public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -58,6 +59,19 @@ namespace CrudLearning.Api.Data
                     .WithMany(employee => employee.AttendanceEntries)
                     .HasForeignKey(entry => entry.EmployeeId)
                     .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity<AuditLog>(entity =>
+            {
+                entity.ToTable("AuditLogs");
+                entity.HasKey(log => log.Id);
+                entity.Property(log => log.Action).IsRequired().HasMaxLength(80);
+                entity.Property(log => log.Description).IsRequired().HasMaxLength(500);
+                entity.Property(log => log.IpAddress).HasMaxLength(64);
+                entity.Property(log => log.UserAgent).HasMaxLength(300);
+                entity.HasIndex(log => log.CreatedAt);
+                entity.HasIndex(log => log.ActorUserId);
+                entity.HasIndex(log => log.TargetEmployeeId);
             });
         }
     }

@@ -16,7 +16,7 @@ The database settings used by the API are:
 - Port: `5432`
 - Database: `crud_learning_db`
 - User: `postgres`
-- Password: `postgres`
+- Password: `Pakboys123`
 
 ## Open pgAdmin
 
@@ -41,7 +41,7 @@ If you want to confirm the settings manually, the connection uses:
 - Port: `5432`
 - Maintenance database: `crud_learning_db`
 - Username: `postgres`
-- Password: `postgres`
+- Password: `Pakboys123`
 
 ## Run the API
 
@@ -94,7 +94,30 @@ Use pgAdmin, DBeaver, or TablePlus using:
 - Port: `5432`
 - Database: `crud_learning_db`
 - Username: `postgres`
-- Password: `postgres`
+- Password: `Pakboys123`
+
+## Security and production notes
+
+- Development uses `ResetDatabaseOnStartup=true`; this deletes and recreates local data. Disable it outside demos.
+- Set `JWT_SECRET` from the environment in production. Do not store production secrets in `appsettings.json`.
+- Use HTTPS, rotate database credentials, and back up PostgreSQL regularly with `pg_dump`.
+- The frontend stores the learning-app session in `sessionStorage`; production systems should use shorter-lived access tokens and secure refresh-token handling.
+
+## Tests and verification
+
+Run backend compile checks:
+
+```powershell
+cd backend/CrudLearning.Api
+dotnet build
+```
+
+Run frontend compile checks:
+
+```powershell
+cd frontend/crud-client
+npm run build
+```
 
 Then open the `Employees`, `Users`, or `AttendanceEntries` tables from the schema browser or run `SELECT * FROM "Employees";`.
 
